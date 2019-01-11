@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  # The Application
+  app:
+    image: vuejs-example1
+    working_dir: /app
+    container_name: vuejs-example1
+    volumes:
+      - /var/www/inne/vue-app-universe/src/:/app/src/
+    # npm is serving application on port 8080
+    ports:
+        - "8080:8080"
+    # serve application in development mode
+    command: "npm run serve"
